@@ -1,5 +1,5 @@
 import { classService } from '../services/classService.js';
-import { classCard } from '../components/cards.js';
+import { classCard } from '../components/classCard.js';
 
 export const homeController = {
     async renderAvailableClasses() {
@@ -19,6 +19,7 @@ export const homeController = {
             container.innerHTML = classes.map(item => classCard(item)).join('');
             
         } catch (error) {
+            console.error("DETALLE DEL ERROR:", error);
             container.innerHTML = '<p>Error al cargar las clases.</p>';
         }
     }

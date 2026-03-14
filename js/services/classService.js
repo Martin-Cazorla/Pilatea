@@ -1,11 +1,9 @@
 import { db } from '../config/firebaseConfig.js';
+// IMPORTANTE: Todas las funciones de base de datos vienen de firebase-firestore.js
 import { 
     collection, 
     addDoc, 
     getDocs, 
-    query, 
-    where, 
-    orderBy,
     serverTimestamp 
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -29,22 +27,19 @@ export const classService = {
     },
 
     /**
-     * Obtiene todas las clases activas ordenadas por fecha
+     * Obtiene todas las clases de la colección
      */
-    async getActiveClasses() {
+    async getAllClasses() {
         try {
-            const q = query(
-                collection(db, "classes"), 
-                where("status", "==", "active"),
-                orderBy("date", "asc")
-            );
-            const querySnapshot = await getDocs(q);
+            const querySnapshot = await getDocs(collection(db, "classes"));
+            
+            // Mapeamos los documentos para incluir el ID de Firebase
             return querySnapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
             }));
         } catch (error) {
-            console.error("Error al obtener clases:", error);
+            console.error("Error en el servicio de clases:", error);
             throw error;
         }
     }
