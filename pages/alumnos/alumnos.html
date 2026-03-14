@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PILATEA - Mi Perfil</title>
+    <link rel="stylesheet" href="../../scss/main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="../../index.html">PILATEA</a></div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Reservar</a></li>
+                <li><a href="#" class="active">Mi Perfil</a></li>
+                <li><button id="btnLogout" class="btn-link">Cerrar Sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="profile-header card">
+            <div class="user-info">
+                <h2 id="userName">Cargando...</h2>
+                <p id="userEmail">--</p>
+            </div>
+            <div class="credit-badge">
+                <span class="label">Créditos Disponibles</span>
+                <span id="userCredits" class="count">0</span>
+            </div>
+        </section>
+
+        <section class="my-bookings">
+            <h3>Mis Próximas Clases</h3>
+            <div id="activeBookingsList" class="bookings-grid">
+                <p class="empty-msg">No tienes reservas activas.</p>
+            </div>
+        </section>
+
+        <section class="history-bookings">
+            <h3>Historial Pasado</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="historyList">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script type="module" src="../js/main.js"></script>
+</body>
+</html>

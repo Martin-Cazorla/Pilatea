@@ -1,0 +1,35 @@
+.main-access-container {
+    position: relative;
+    min-height: 100vh; // Alto total de la pantalla
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; // Centra todo verticalmente
+    gap: 2rem;
+    padding: 2rem;
+    
+    // Fondo con overlay para que el texto blanco se lea perfecto
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('../../assets/img/home-bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    text-align: center;
+    color: $color-blanco;
+    
+    h1 {
+        font-family: $fuente-secundaria;
+        font-size: 3rem; // Un poco más grande para destacar
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    p {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+}

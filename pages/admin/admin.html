@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PILATEA - Administrador Central</title>
+    <link rel="stylesheet" href="../../scss/main.css">
+</head>
+<body class="admin-layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">PILATEA ADMIN</div>
+        <nav>
+            <a href="../staff/staff.html">Gestión Diaria</a>
+            <a href="#" class="active">Configuración Global</a>
+            <a href="../../index.html">Ver Web</a>
+        </nav>
+    </aside>
+
+    <main class="admin-content">
+        <header class="admin-topbar">
+            <h1>Configuración del Estudio</h1>
+        </header>
+
+        <section class="grid-stats">
+            <div class="stat-card">
+                <h4>Total Alumnos</h4>
+                <p id="statTotalUsers">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Créditos en Circulación</h4>
+                <p id="statTotalCredits">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Clases este mes</h4>
+                <p id="statTotalClasses">0</p>
+            </div>
+        </section>
+
+        <section class="admin-section card">
+            <h3>Editar Tipos de Clase</h3>
+            <p>Define aquí los cupos máximos por defecto para cada disciplina.</p>
+            </section>
+    </main>
+
+    <script type="module" src="../js/main.js"></script>
+</body>
+</html>

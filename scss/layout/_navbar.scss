@@ -1,0 +1,22 @@
+.navbar {
+    background-color: $color-nav-bg;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $color-crema;
+
+    .logo {
+        font-family: $fuente-secundaria;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: $color-principal;
+        letter-spacing: 2px;
+    }
+
+    .nav-logo {
+        height: 50px; 
+        width: auto;
+        display: block;
+    }
+}

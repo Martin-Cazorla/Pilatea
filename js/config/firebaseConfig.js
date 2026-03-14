@@ -1,0 +1,17 @@
+// src/js/config/firebaseConfig.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD-YJPMYUaTgwVFWGe1Zh1BHhxAxu3Bkwo",
+  authDomain: "pilatea-app-v2.firebaseapp.com",
+  projectId: "pilatea-app-v2",
+  storageBucket: "pilatea-app-v2.firebasestorage.app", 
+  messagingSenderId: "708162358237",
+  appId: "1:708162358237:web:615fc002223e58c4f9c434"
+};
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);

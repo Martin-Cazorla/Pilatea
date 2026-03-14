@@ -1,0 +1,12 @@
+.grid-container {
+    display: grid;
+    // Esto crea columnas automáticas que se ajustan al ancho de la pantalla
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    width: 100%;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr; // En celulares, una sola columna
+    }
+}

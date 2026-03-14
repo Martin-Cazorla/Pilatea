@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PILATEA - Bienestar y Movimiento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/img/logo-pilatea-removebg-preview.png" alt="PILATEA Logo" class="nav-logo">
+            </div>
+            <div id="authStatus">
+                </div>
+        </nav>
+    </header>
+
+    <main id="app">
+        <section class="main-access-container">
+            
+            <div class="hero-content">
+                <h1>Tu espacio de Pilates</h1>
+                <p>Reserva tus clases de Reformer, Hiit Barre y Yoga.</p>
+            </div>
+
+            <section id="loginSection" class="login-container">
+                <div class="login-card">
+                    <h2>Bienvenido</h2>
+                    <form id="loginForm">
+                        <input type="email" id="loginEmail" placeholder="Correo Electrónico" required>
+                        <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                        <button type="submit" class="btn-principal">Ingresar</button>
+                    </form>
+                </div>
+            </section>
+
+        </section>
+
+        <section id="classesSection" class="container hidden">
+            <h2>Clases Disponibles</h2>
+            <div id="classesGrid" class="grid-container"></div>
+        </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
