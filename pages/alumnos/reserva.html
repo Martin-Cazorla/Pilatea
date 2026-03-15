@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Turno - PILATEA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body class="page-reserva">
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="../../index.html">
+                    <img src="../../assets/img/logo-pilatea-removebg-preview.png" alt="Logo" class="nav-logo">
+                </a>
+            </div>
+            <div class="header-actions">
+                <span id="user-welcome">Hola, <strong id="user-name">...</strong></span>
+                <button id="btnLogout" class="btn-principal">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="reservation-container">
+        <div class="booking-wrapper">
+            <section class="calendar-column">
+                <div class="calendar-header">
+                    <button id="prev-month"><i class="fa-solid fa-chevron-left"></i></button>
+                    <h2 id="calendar-month-year"></h2>
+                    <button id="next-month"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="calendar-grid">
+                    <div class="day-name">DOM</div><div class="day-name">LUN</div>
+                    <div class="day-name">MAR</div><div class="day-name">MIE</div>
+                    <div class="day-name">JUE</div><div class="day-name">VIE</div>
+                    <div class="day-name">SAB</div>
+                    <div id="calendar-days" class="days-container"></div>
+                </div>
+            </section>
+
+            <section class="time-column">
+                <h3 id="selected-date-display">Seleccioná un día</h3>
+                <div id="time-slots-grid" class="time-slots-vertical">
+                    <p class="empty-msg">Seleccioná un día resaltado para ver clases.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="../../js/reservation.js"></script>
+</body>
+</html>

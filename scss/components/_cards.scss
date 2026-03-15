@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "../base/variables" as *;
 
 .class-card {
     background: $color-blanco;

@@ -14,17 +14,15 @@
             <div class="logo">
                 <img src="assets/img/logo-pilatea-removebg-preview.png" alt="PILATEA Logo" class="nav-logo">
             </div>
-            <div id="authStatus">
-                </div>
+            <div id="authStatus"></div>
         </nav>
     </header>
 
     <main id="app">
         <section class="main-access-container">
-            
             <div class="hero-content">
                 <h1>Tu espacio de Pilates</h1>
-                <p>Reserva tus clases de Reformer, Hiit Barre y Yoga.</p>
+                <p>Descubrí nuestras disciplinas y reservá tu lugar.</p>
             </div>
 
             <section id="loginSection" class="login-container">
@@ -37,12 +35,32 @@
                     </form>
                 </div>
             </section>
-
         </section>
 
-        <section id="classesSection" class="container hidden">
-            <h2>Clases Disponibles</h2>
-            <div id="classesGrid" class="grid-container"></div>
+        <section class="container">
+            <h2 class="section-title">Nuestras Disciplinas</h2>
+            <div class="grid-container">
+                <div class="class-card">
+                    <div class="card-tag">Pilates</div>
+                    <h4>Reformer</h4>
+                    <p>Mejorá tu postura y fortalecé tu cuerpo con el método clásico.</p>
+                    <button onclick="window.location.href='pages/alumnos/reserva.html'" class="btn-reserva">Ver Horarios</button>
+                </div>
+
+                <div class="class-card">
+                    <div class="card-tag">Dinámico</div>
+                    <h4>Hiit Barre</h4>
+                    <p>Fusión de ballet, yoga y entrenamiento funcional de alta intensidad.</p>
+                    <button onclick="window.location.href='pages/alumnos/reserva.html'" class="btn-reserva">Ver Horarios</button>
+                </div>
+
+                <div class="class-card">
+                    <div class="card-tag">Zen</div>
+                    <h4>Yoga</h4>
+                    <p>Conectá tu respiración con el movimiento en nuestras sesiones guiadas.</p>
+                    <button onclick="window.location.href='pages/alumnos/reserva.html'" class="btn-reserva">Ver Horarios</button>
+                </div>
+            </div>
         </section>
     </main>
 

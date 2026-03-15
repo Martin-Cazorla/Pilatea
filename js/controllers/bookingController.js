@@ -1,32 +1,32 @@
-import { creditService } from '../services/creditService.js';
 import { bookingService } from '../services/bookingService.js';
-import { classService } from '../services/classService.js';
+import { db } from '../config/firebaseConfig.js';
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-/**
- * Orquestador de la reserva de clases.
- */
 export const bookingController = {
-    
-    async handleBooking(userId, classId) {
+    async attemptBooking(user, classData) {
         try {
-            // 1. Verificar disponibilidad de la clase
-            const classData = await classService.getClassById(classId);
-            if (classData.enrolledCount >= classData.capacity) {
-                alert("Lo sentimos, esta clase está llena.");
-                return;
+            // Check de Créditos (Dato fresco)
+            const userSnap = await getDoc(doc(db, "users", user.uid));
+            const userData = userSnap.data();
+
+            if (userData.currentCredits <= 0) {
+                throw new Error("No tienes créditos suficientes.");
             }
 
-            // 2. Intentar realizar la reserva y el descuento de crédito
-            // NOTA: En un sistema PRO, esto debería ser una sola transacción de Firestore
-            await creditService.deductCredit(userId);
-            await bookingService.createBooking(userId, classId);
-            await classService.incrementEnrollment(classId);
+            if (classData.enrolledCount >= classData.capacity) {
+                throw new Error("Esta clase ya está completa.");
+            }
 
-            alert("Reserva confirmada con éxito.");
-            window.location.reload(); // Refrescar para ver cambios
+            const confirmReserva = confirm(`¿Reservar ${classData.type} a las ${classData.time}hs?`);
+            
+            if (confirmReserva) {
+                await bookingService.processBooking(user.uid, classData.id);
+                alert("¡Reserva confirmada!");
+                window.location.reload();
+            }
 
         } catch (error) {
-            alert("No se pudo completar la reserva: " + error);
+            alert(error.message || error);
         }
     }
 };

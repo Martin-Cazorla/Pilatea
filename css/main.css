@@ -116,6 +116,37 @@ body {
   background: rgb(132.2177419355, 202.7822580645, 139.2741935484);
 }
 
+.btn-reserva-mini {
+  background-color: #5d4037;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-reserva-mini:hover {
+  background-color: #3e2723;
+}
+
+.btn-secundario {
+  background: transparent;
+  border: 1.5px solid #5d4037;
+  color: #5d4037;
+  padding: 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+.btn-secundario:hover {
+  background: #5d4037;
+  color: #ffffff;
+}
+
 .class-card {
   background: #ffffff;
   border-radius: 12px;
@@ -269,4 +300,135 @@ body {
 .btn-secundario:hover {
   background: #5d4037;
   color: #ffffff;
+}
+
+.page-reserva {
+  background-color: #f1efe7;
+  min-height: 100vh;
+}
+
+.reservation-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.booking-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 992px) {
+  .booking-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.calendar-column {
+  flex: 1.5;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.calendar-column .calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.calendar-column .calendar-header h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #5d4037;
+  text-transform: capitalize;
+}
+.calendar-column .calendar-header button {
+  background: none;
+  border: 1px solid #f1efe7;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.calendar-column .calendar-header button:hover {
+  background: #f1efe7;
+}
+.calendar-column .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
+}
+.calendar-column .calendar-grid .day-name {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: rgba(33, 33, 33, 0.5);
+}
+.calendar-column .calendar-grid #calendar-days {
+  display: contents;
+}
+.calendar-column .calendar-grid .day {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  min-height: 40px;
+}
+.calendar-column .calendar-grid .day.active {
+  background-color: #5d4037 !important;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+.calendar-column .calendar-grid .day.has-classes {
+  color: #5d4037;
+  font-weight: bold;
+}
+.calendar-column .calendar-grid .day.has-classes::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  background-color: #5d4037;
+  border-radius: 50%;
+}
+.calendar-column .calendar-grid .day.active.has-classes::after {
+  background-color: #ffffff;
+}
+
+.time-column {
+  flex: 1;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.time-column .time-slots-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.time-column .time-slot-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #f1efe7;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.time-column .time-slot-card .slot-info {
+  display: flex;
+  flex-direction: column;
+}
+.time-column .time-slot-card .slot-info span {
+  font-weight: bold;
+  color: #212121;
+}
+.time-column .time-slot-card .slot-info small {
+  color: rgba(33, 33, 33, 0.6);
 }/*# sourceMappingURL=main.css.map */

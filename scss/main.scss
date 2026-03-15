@@ -1,19 +1,19 @@
-// 1. Base y Variables
-@import 'base/variables';
-@import 'base/reset';
+// 1. Base (Variables y Reset)
+@use 'base/variables';
+@use 'base/reset';
 
-// 2. Layout
-@import 'layout/navbar';
-@import 'layout/grid';
+// 2. Layout (Estructura global)
+@use 'layout/navbar';
+@use 'layout/grid';  
 
-// 3. Fondos (Backgrounds)
-@import 'backgrounds/studio-backgrounds';
+// 3. Fondos
+@use 'backgrounds/studio-backgrounds';
 
-// 4. Componentes
-@import 'components/buttons';
-@import 'components/cards';
-@import 'components/forms';
+// 4. Componentes (Elementos reutilizables)
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
 
-// 5. Páginas (Mantenlos comentados para evitar errores de compilación)
-// @import 'pages/home';
-@import 'pages/staff';
+// 5. Páginas (Estilos específicos)
+@use 'pages/staff';
+@use 'pages/reserva';

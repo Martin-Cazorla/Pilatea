@@ -1,3 +1,5 @@
+@use "../base/variables" as *;
+
 .main-access-container {
     position: relative;
     min-height: 100vh; // Alto total de la pantalla
