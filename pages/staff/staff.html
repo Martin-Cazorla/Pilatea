@@ -14,61 +14,99 @@
             <div class="logo">
                 <img src="../../assets/img/logo-pilatea-removebg-preview.png" alt="PILATEA Logo" class="nav-logo">
             </div>
-            <div class="nav-actions">
-                <a href="../../index.html" class="btn-link">Ver Web</a>
-                <button id="btnLogout" class="btn-principal">Cerrar Sesión</button>
-            </div>
+            <div id="authStatus" class="nav-menu"></div>
         </nav>
     </header>
 
     <main class="container-admin">
         <header class="admin-header">
             <h1>Gestión del Estudio</h1>
-            <p>Desde aquí puedes crear nuevos horarios y gestionar a tus alumnos.</p>
+            <p>Generador de grilla horaria profesional.</p>
         </header>
 
         <div class="admin-grid">
             <section class="admin-card">
-                <h3>Publicar Nueva Clase</h3>
-                <form id="createClassForm" class="staff-form">
-                    <div class="form-group">
-                        <label>Tipo de Disciplina</label>
-                        <select id="classType" required>
-                            <option value="Pilates Reformer">Pilates Reformer</option>
-                            <option value="Hiit Barre">Hiit Barre</option>
-                            <option value="Yoga">Yoga</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Instructor/a</label>
-                        <input type="text" id="classInstructor" placeholder="Nombre del profe" required>
-                    </div>
+                <h3>Generador de Clases Masivo</h3>
+                <form id="massiveClassForm" class="staff-form">
+                    
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Fecha</label>
-                            <input type="date" id="classDate" required>
+                            <label>Disciplina</label>
+                            <select id="classType" required>
+                                <option value="Pilates Reformer">Pilates Reformer</option>
+                                <option value="Hiit Barre">Hiit Barre</option>
+                                <option value="Yoga">Yoga</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label>Hora</label>
-                            <input type="time" id="classTime" required>
+                            <label>Instructor/a</label>
+                            <input type="text" id="classInstructor" placeholder="Nombre" required>
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label>Cupos Máximos</label>
+                        <label>1. Seleccioná los días de la semana</label>
+                        <div class="days-selector" id="daysSelector">
+                            <label class="chip"><input type="checkbox" name="day" value="1"> Lun</label>
+                            <label class="chip"><input type="checkbox" name="day" value="2"> Mar</label>
+                            <label class="chip"><input type="checkbox" name="day" value="3"> Mié</label>
+                            <label class="chip"><input type="checkbox" name="day" value="4"> Jue</label>
+                            <label class="chip"><input type="checkbox" name="day" value="5"> Vie</label>
+                            <label class="chip"><input type="checkbox" name="day" value="6"> Sáb</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>2. Seleccioná los horarios (clases de 1h)</label>
+                        <div class="time-grid-selector" id="timeSelector">
+                            <!-- Turno Mañana -->
+                            <label class="chip"><input type="checkbox" name="hour" value="06:00"> 06:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="07:00"> 07:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="08:00"> 08:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="09:00"> 09:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="10:00"> 10:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="11:00"> 11:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="12:00"> 12:00</label>
+                            <!-- Turno Tarde -->
+                            <label class="chip"><input type="checkbox" name="hour" value="13:00"> 13:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="14:00"> 14:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="15:00"> 15:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="16:00"> 16:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="17:00"> 17:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="18:00"> 18:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="19:00"> 19:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="20:00"> 20:00</label>
+                            <label class="chip"><input type="checkbox" name="hour" value="21:00"> 21:00</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Fecha Inicio</label>
+                            <input type="date" id="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha Fin (Límite)</label>
+                            <input type="date" id="endDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cupos por clase</label>
                         <input type="number" id="classCapacity" value="8" min="1" required>
                     </div>
-                    <button type="submit" class="btn-principal">Crear Clase</button>
+                    
+                    <button type="submit" id="btnGenerateGrid" class="btn-principal">Generar Grilla</button>
                 </form>
             </section>
 
             <section class="admin-card">
-                <h3>Próximas Acciones</h3>
-                <div class="action-buttons">
-                    <button class="btn-secundario">Cargar Créditos</button>
-                    <button class="btn-secundario">Ver Lista de Alumnos</button>
+                <h3>Zona de Peligro</h3>
+                <p>Borrado rápido de clases por fecha.</p>
+                <div class="form-group">
+                    <input type="date" id="deleteDate">
+                    <button id="btnBulkDelete" class="btn-principal btn-danger" style="margin-top: 10px;">Borrar Clases del Día</button>
                 </div>
-                <hr>
-                <div id="statusMessage" class="status-msg"></div>
             </section>
         </div>
     </main>

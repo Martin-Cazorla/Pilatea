@@ -1,23 +1,44 @@
 @use "../base/variables" as *;
+
 .navbar {
     background-color: $color-nav-bg;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid $color-crema;
+    border-bottom: 1px solid rgba($color-principal, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    .logo {
-        font-family: $fuente-secundaria;
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: $color-principal;
-        letter-spacing: 2px;
-    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 1.5rem;
 
-    .nav-logo {
-        height: 50px; 
-        width: auto;
-        display: block;
+        li a {
+            text-decoration: none;
+            color: $color-texto;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+
+            &:hover {
+                color: $color-principal;
+            }
+        }
     }
+}
+
+// Botón de logout más discreto para la nav
+.btn-principal-mini {
+    background-color: $color-principal;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    &:hover { background-color: $color-acento; }
 }
